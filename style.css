@@ -18,3 +18,17 @@ input {
     top: 0;
     right: 0;
   }
+
+  li{
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  li button{
+    position: relative;
+    /* float: right;
+    width: 10%; */
+    }
+  
