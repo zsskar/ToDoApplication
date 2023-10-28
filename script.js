@@ -33,7 +33,8 @@ add.addEventListener("click", function() {
 });
 
 function deleteItem(id){
-  if(confirm('Are you sure want to delete the item !'))
+  if(confirm('Are you sure want to delete the item !')){
           document.getElementById(id).remove();
+  }
 
 }
