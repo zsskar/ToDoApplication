@@ -5,10 +5,10 @@ add.addEventListener("click", function() {
     let text = document.getElementById("searchText").value;
     if(text){
         list.push(text);
-        oList.innerHTML += `  <li>${text}
+        oList.innerHTML += `<li id=${list.length - 1}>${text}
         <div class="buttons">
           <button>Edit</button>
-          <button>Delete</button>
+          <button onclick='deleteItem(${list.length - 1})'>Delete</button>
         </div>
       </li>`;
         // let listItem = document.createElement('li');
@@ -31,3 +31,9 @@ add.addEventListener("click", function() {
         alert("Enter the text !");
     }
 });
+
+function deleteItem(id){
+  if(confirm('Are you sure want to delete the item !'))
+          document.getElementById(id).remove();
+
+}
