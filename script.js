@@ -5,9 +5,9 @@ add.addEventListener("click", function() {
     let text = document.getElementById("searchText").value;
     if(text){
         list.push(text);
-        oList.innerHTML += `<li id=${list.length - 1}>${text}
+        oList.innerHTML += `<li id=${list.length - 1}><input onfocusout="saveItemData(${list.length - 1})" type='text'id=input${list.length - 1} value='${text}' disabled/>
         <div class="buttons">
-          <button>Edit</button>
+          <button onclick='editItem(${list.length - 1})'>Edit</button>
           <button onclick='deleteItem(${list.length - 1})'>Delete</button>
         </div>
       </li>`;
@@ -39,5 +39,20 @@ function deleteItem(id){
   else{
     alert("Operation Cancelled.");
   }
+
+}
+
+
+function editItem(id){
+  document.getElementById('input'+id).disabled = false;
+}
+
+function saveItemData(id){
+  let value = document.getElementById('input'+id).value;
+  console.log(list);
+  list[id] = value;
+  document.getElementById('input'+id).disabled = true;
+  console.log(list);
+  alert("New Value Saved.");
 
 }
