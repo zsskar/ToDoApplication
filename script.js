@@ -53,6 +53,6 @@ function saveItemData(id){
   list[id] = value;
   document.getElementById('input'+id).disabled = true;
   console.log(list);
-  alert("New Value Saved.");
+  console("New Value Saved.");
 
 }
